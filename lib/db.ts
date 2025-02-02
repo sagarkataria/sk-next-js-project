@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import { buffer } from "stream/consumers";
 const MONGODB_URI = process.env.MONGODB_URI!;
 
 if(!MONGODB_URI){
@@ -33,8 +32,5 @@ export async function connectToDatabase() {
         cached.promise = null
         throw error;
     }
-
     return cached.conn;
-
-
 }
